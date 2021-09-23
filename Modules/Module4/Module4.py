@@ -4,6 +4,10 @@ def greetStudent(name):
 name = "Francisco R. Aponte Bertólez"
 greetStudent(name)
 
-def breakfast(AFB):
-        print(f"What did you have for breakfast?{AFB}")
-
+def Ate(AM):
+        print(f"What did you have for breakfast?{AM}")
+        print(AM)
+        print(f"What did you have for lunch?{AM}")
+        print (AM)
+        print(f"What did you have for Dinner?{AM}")
+        print(AM)
