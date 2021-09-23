@@ -96,28 +96,36 @@ print(type(age))
 
 What is the difference between "42" and 42.
 
- - Answer:
+ - Answer: The difference between "42" and 42, is that the "" in "42" make it into a string, or a sequence of data for the program. for example in the project wehre we had to rpint our name, the letters were in between "" making those letters a string aswell. THe 42 without "" is simply just an integer.
 
 Define the boolean operators: >, <, ==, >=, <=
 
- - Answer:
+ - Answer: Boolean operators are used to define operations as true or false, the operators used in these booleans are: <, which means less than, >, which means more than, ==, which means equal to, >= which means more than or equal to, and <, which means less than or equal to.
 
 How do you address an index in an list? Write a python code that assigns 34 to a new variable by accessing the value stored in:  
         arr = [4, 3, -1, 4, 34]
 
- - Answer:
+ - Answer: 
+ arr = [4, 3, -1, 4, 34]
+print (arr[4])
+brr = arr[4]
+print (brr)
+
+
 
 What is the first index of a list? Why?
 
- - Answer:
+ - Answer: the first index of a list is 0 for a couple of reasons. The first one is that the language of code had always been this way, while there are still other types of code that do not start at zero, hte largest ones like java and python do. Also, it makes it more clear for the program to reach a index in a list from its memory. For example in: 1, 2, 3, 4, 5.(1=0). The logic behind it is how far the numbers are from the beggining (therefore the 1 is 0 numbers from the begining. Finally, you can represent 10 different values with only 1 digit.)
 
 Provide an original example of a null value. It must prove your understanding of the concept.
 
- - Answer:
+ - Answer: The difference between 0 and a null values is that a null value is simply unknown. For example, if teh problem we are facing is "how many classrooms does Colegio san ignacio have that an english teacher has given a class in?" that would be a null value becuase we do not know. The question does not have to be that specific or unknown to everyone, for example if we ask how many glasses of water did jose drink today, that would also be a null value even though jose knows how many he drank today..
 
 Type down any class notes below this sentence:
 
+Profesor como no fui al colegio, no pude prenguntarte como hacer la 3, busque en el internet para ver si podia aprender y aprendi como update integers de una lista y todo lo basico de una lista. Corri el codigo que puse como respuesta pero me salia: error, brr is not defined. no se como definirlo. Ya no lo estoy definiendo poniendo que brr = arr[4]?
 
+Y lo arregle
 
 Lackluster responses may result in point deductions.
 -->
