@@ -71,9 +71,21 @@ print(f"Computer selected: {computerChoice}")
 Give a python example for each logic operator in the module image.
 
  - Answers:
-   - OR:
-   - AND: 
-   - NOT: 
+   - OR: a=25 b=50
+          If a > 0 or b < 10
+
+          Output: true
+
+   - AND: a=25 b=50
+          If a < 100 and b > 0
+
+          Output: True
+
+
+   - NOT:  a=25
+           if not a == 25
+
+          Output: False
 
 
 Type down any class notes below this sentence:
