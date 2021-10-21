@@ -1,0 +1,9 @@
+{
+    "gun": "APB",
+    "cartridge": "9x18mm",
+    "bullet": "9x18mm PM BZhT gzh",
+    "velocity": 325.0,
+    "buildingName": 828.0,
+    "buildingHeight": 828.0,
+    "gravity": 9.8
+}
