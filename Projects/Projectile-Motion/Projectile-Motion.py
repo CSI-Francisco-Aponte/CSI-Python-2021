@@ -38,10 +38,10 @@ def calculateBulletDT(experimentData: ExperimentData):
 myDataSet = [
 
 ExperimentData("APB", "9x18mm", "9x18mm PM BZhT gzh", 325.00, "Birj Khalifa", 828.00, 9.8),
-ExperimentData("APB", "9x18mm", "9x18mm PM BZhT gzh", 325.00, "Birj Khalifa", 828.00, 9.8),
-ExperimentData("APB", "9x18mm", "9x18mm PM BZhT gzh", 325.00, "Birj Khalifa", 828.00, 9.8),
-ExperimentData("APB", "9x18mm", "9x18mm PM BZhT gzh", 325.00, "Birj Khalifa", 828.00, 9.8),
-ExperimentData("APB", "9x18mm", "9x18mm PM BZhT gzh", 325.00, "Birj Khalifa", 828.00, 9.8)
+ExperimentData("SKS", "7.62x39mm", "7.62x39mm PS gzh", 700.00, "Birj Khalifa", 828.00, 9.8),
+ExperimentData("MP5", "9x19mm Parabellum", "9x19mm Pst gzh", 457.00, "Birj Khalifa", 828.00, 9.8),
+ExperimentData("DVL-10", "7.62x51mm NATO", "7.62x51mm M80", 833.00, "Birj Khalifa", 828.00, 9.8),
+ExperimentData("FN GL40", "40x46 mm", "40x46mm M381(HE) grenade", 76.00, "Birj Khalifa", 828.00, 9.8)
 ]
 
 calculateBulletDT(mydata[0])
