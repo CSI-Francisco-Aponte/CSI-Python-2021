@@ -1,9 +1,31 @@
+import math
+
 class ExperimentData:
-    def __init__(self,gun: str, cartridge: str, bullet: str, velocity: float, buildingName: str, buildingHeight: float, gravity: float):
+    def __init__(self,gun: str, cartridge: str, bullet: str, velocity: float, buildingName: str, buildingHeight: float, planet: str):
         self.gun = gun
         self.cartridge = cartridge
         self.bullet = bullet
         self.velocity = velocity
-        self.buildingName = buildingHeight
+        self.buildingName = buildingName
         self.buildingHeight = buildingHeight
-        self.gravity = gravity
+        self.planet = planet
+        # self.gravity = gravity
+
+    def solveForTime(self):
+        return (math.sqrt(2 * self.buildingHeight / self.solveForGravity()))
+
+    def solveForDistance(self):
+        return(self.velocity * self.solveForTime())
+
+    def solveForEarthDistance(self):
+        return(self.velocity * (math.sqrt(2 * self.buildingHeight / 9.81)))
+    
+    def solveForGravity(self):
+        planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
+        gravity_ms2 = [3.7, 8.87, 9.81, 3.711, 24.79, 10.44, 8.69, 11.15]
+        return gravity_ms2[planets.index(self.planet)]
+
+    def run(self):
+        print(f"In this experiment, we are climbing {self.buildingHeight} meters to the top of {self.buildingName} and shooting a {self.gun} with a cartidge of {self.cartridge} using a {self.bullet}. Considering there is no air resistance, the bullet will travel with a velocity of {self.velocity} m/s and a distance of {round(self.solveForEarthDistance(), 2)} meters. If we shoot the same gun from {self.planet} that has a gravity of {self.solveForGravity()}, It will travel for a distance of {round(self.solveForDistance(), 2)}meters. ")
+
+
