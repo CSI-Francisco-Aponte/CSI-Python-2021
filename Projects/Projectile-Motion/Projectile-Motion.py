@@ -34,7 +34,7 @@ import json
 
 # calculateBulletDT("APB", "9x18mm", "9x18mm PM BZhT gzh", 325.00, "Birj Khalifa", 828.00)
 
-
+# Here im defining my data set with all the parameters
 myDataSet = [
 
 ExperimentData("APB", "9x18mm", "9x18mm PM BZhT gzh", 325.00, "Birj Khalifa", 828.00, "Mercury"),
