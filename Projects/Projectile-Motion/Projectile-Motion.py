@@ -46,16 +46,19 @@ ExperimentData("FN GL40", "40x46 mm", "40x46mm M381(HE) grenade", 76.00, "Birj K
 
 # calculateBulletDT(myDataSet[0])
 
+# Im definign the file using output path, then the output path joins the eperiment data
 myOutputPath = Path(__file__) . parents[0]
 myOutputFilePath = os.path.join(myOutputPath, 'ExperimentData.json')
 
+# Im taking my OutputFilePath and defining it as outfile so that it can read myDataSet
 with open (myOutputFilePath, 'w') as outfile:
     # json.dump(myDatSet[0], outfile)
     json.dump([data.__dict__ for data in myDataSet], outfile)
-
+    
+# This is making the variable deserialize open myOutputFilePath and then loding the dataset with experimentJson.
 deserialize = open(myOutputFilePath)
 experimentJson = json.load(deserialize)
-
+# This is customizing the output
 for e in experimentJson:
     print("\n------------------------------------\n")
     ExperimentData(**e).run()
