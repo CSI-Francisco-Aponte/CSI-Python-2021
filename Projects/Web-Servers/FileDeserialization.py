@@ -21,3 +21,4 @@ print(f"app_semantic_version: {app.app_semantic_version}")
 print(f"app_major_version: {app.app_major_version}")
 print(f"app_minor_version: {app.app_minor_version}")
 print(f"app_patch_version: {app.app_patch_version}")
+
