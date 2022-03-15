@@ -17,7 +17,9 @@ pygame.display.set_caption('Snake game by Edureka')
 game_over=False
 while not game_over:
     for event in pygame.event.get():
-        print(event)
+        #This makes so when the close button on the screen is pressed, the screen quits or closes
+        if event.type==pygame.QUIT:
+            game_over=True
 
 #This ends the game
 pygame.quit()
