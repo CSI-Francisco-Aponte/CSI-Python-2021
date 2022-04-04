@@ -1,6 +1,7 @@
 #the screen of the game is created using pygame, therefore the program needs pygame
 import pygame
-
+#This imports time into the code, and all its functions
+import time
 #This begins the game
 pygame.init()
 
@@ -9,8 +10,12 @@ white = (255, 255, 255)
 black = (0, 0, 0)
 red = (255, 0, 0)
 
-#This creates the screen display of the game and sets its dimensions
-dis=pygame.display.set_mode((800,600))
+#This establishes the width of the screen
+dis_width = 800
+#This establishes the height of the screen
+dis_height  = 600
+#This creates the display or the screen that the game takes place
+dis = pygame.display.set_mode((dis_width, dis_width))
 
 # This makes the window that opens, the screen, to have the caption or be named "Snake game by Edureka"
 pygame.display.set_caption('Snake game by Edureka')
@@ -18,17 +23,34 @@ pygame.display.set_caption('Snake game by Edureka')
 # First a variable is created called game over and then a loop is created using that variable. The loop is runs while the game is not over. This causes the game not to open and close immedietly as it previously did.
 game_over = False
 
-#Here 2 variables are created x1 and y1 which are manipulated later in the code to change the x and y values of the snake
-x1 = 300
-y1 = 300
- 
+#This establishes the location in terms of the x axis where the snake begins the game
+x1 =dis_width/2
+#This establishes the location in terms of the y axis where the snake begins the game
+y1 =dis_width/2
+#This establishes how big the snake block is
+snake_block = 10
+
 # Here the variables for how much the x and y values are changed
 x1_change = 0       
 y1_change = 0
  
 #This creates a timer in the game
 clock = pygame.time.Clock()
+
+#This creates a variable used in a later function to set the speed of the snake. a variable is created to be able to manipulate the speed of the snake in later codes
+snake_speed=30
+
+#This establishes the font for the game
+font_style = pygame.font.SysFont(None, 50)
  
+#This defines the function called message. Which is relatively self-explanatory, it displays messages on the display
+def message(msg,color):
+    #This establishes the parameters of msg
+    mesg = font_style.render(msg, True, color)
+    #This establishes the coordinates in which the message will be
+    dis.blit(mesg, [dis_width/2, dis_height/2])
+
+
 #This is the block of code used to control the snake, every time the arrows are pressed, the snake changes x or y by 10 depending on which arrow in which direction is pressed.
 while not game_over:
     #This creates a for loop with everything in the list
@@ -55,20 +77,27 @@ while not game_over:
                 y1_change = 10
                 x1_change = 0
  
+#Here the program changes the value of the variable game_over to true if the snake touches any of the edges of the display, ending the game
+    if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 < 0:
+        game_over = True
 
 # the variables x1 and y1 change as long as the x1_change and y1_change varibles changes too
     x1 += x1_change
     y1 += y1_change
 #Here it makes the entire display completely white
     dis.fill(white)
-# this draws a rectangle on the display colored black on the corrdinates of x1 and y1 with the dimensions 10x10
-    pygame.draw.rect(dis, black, [x1, y1, 10, 10])
+# this draws a rectangle on the display colored black on the corrdinates of x1 and y1 with the dimensions 10x10, which is how big the snake block is
+    pygame.draw.rect(dis, black, [x1, y1, snake_block, snake_block])
 
-#This piece of coding updates the screen.
-    pygame.display.update()
+#This sets the speed that the snake goes using the variable created earlier
+    clock.tick(snake_speed)
 
-#This sets the speed that the timer runs.
-    clock.tick(30)
+#This displays the words You lost on the screen in red when the player loses
+message("You lost",red)
+#This updates the display
+pygame.display.update()
+#This tells the program that after the player has lost, to display the you lost on the screen for 2 secons before ending the game
+time.sleep(2)
 
 #This ends the game
 pygame.quit()
