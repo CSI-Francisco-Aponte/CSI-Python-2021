@@ -37,6 +37,13 @@ snake_speed=15
 font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
+#Here a function called Your_Score is defined. 
+def Your_score(score):
+#Creates a yellow string with your score called value
+    value = score_font.render("Your Score: " + str(score), True, yellow)
+    #Displays the score on the screen
+    dis.blit(value, [0, 0])
+
 # This creates a function to draw the snake
 def our_snake(snake_block, snake_list):
     #This draws the snake, in black, and sets the coordinates and dimensions in which it will be drawn
@@ -79,9 +86,11 @@ def gameLoop():
         #This establishes what happens when the user looses. First it makes the variable game_close True
         while game_close == True:
             #This makes the entire display fill to the color blue using the variable created earlier.
-            dis.fill(white)
+            dis.fill(blue)
             #This displays a message on the screen in red
             message("You Lost! Press Q-Quit or C-Play Again", red)
+            #The program displays you the score you had on the screen when you lost
+            Your_score(Length_of_snake - 1)
             #This updates the display
             pygame.display.update()
  
@@ -150,7 +159,9 @@ def gameLoop():
  
         #Our_snake is the snake displayed in the game, this sets its dimensions
         our_snake(snake_block, snake_List)
- 
+        #Displays the score, the length of the snake - 1 because the head of the snake does not count
+        Your_score(Length_of_snake - 1)
+
         #This updates the display
         pygame.display.update()
  
